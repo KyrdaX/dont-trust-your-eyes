@@ -26,7 +26,7 @@ func _ready():
 		if next_level_exists:
 			GameManager.level += 1
 		else:
-			pass #TODO: Make this go to the menu (and maybe think of a transition if the pixelate does not fit)
+			pass 
 		
 		_spawn_level()
 	)
