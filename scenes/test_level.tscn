@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dw865tnt46nr7"]
+
+[ext_resource type="PackedScene" uid="uid://bk6d5k8qmqi8u" path="res://components/player.tscn" id="1_2venv"]
+[ext_resource type="PackedScene" uid="uid://cl5hfdk8jbegs" path="res://components/spike.tscn" id="2_paw1w"]
+[ext_resource type="PackedScene" uid="uid://b0hon4tlqf67e" path="res://components/goal.tscn" id="3_j6w7d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_paw1w"]
+
+[node name="TestLevel" type="Node2D" unique_id=1733674713]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1409580247]
+offset_left = -41.0
+offset_top = -19.0
+offset_right = -1.0
+offset_bottom = 21.0
+scale = Vector2(30.902098, 17.24818)
+color = Color(0.73658204, 0.41962102, 0.23102042, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1615298547]
+position = Vector2(217, 282)
+scale = Vector2(21.920006, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=411088079]
+shape = SubResource("RectangleShape2D_paw1w")
+
+[node name="Player" parent="." unique_id=1755007542 instance=ExtResource("1_2venv")]
+position = Vector2(109, 118)
+
+[node name="Spike" parent="." unique_id=1650476415 instance=ExtResource("2_paw1w")]
+position = Vector2(265, 237)
+
+[node name="Spike2" parent="." unique_id=1793831718 instance=ExtResource("2_paw1w")]
+position = Vector2(291, 236.99998)
+
+[node name="Spike3" parent="." unique_id=200681402 instance=ExtResource("2_paw1w")]
+position = Vector2(317, 237)
+
+[node name="Goal" parent="." unique_id=125260752 instance=ExtResource("3_j6w7d")]
+position = Vector2(400, 215)
