@@ -1,0 +1,517 @@
+[gd_scene format=3 uid="uid://y7jhdsfrmii7"]
+
+[ext_resource type="PackedScene" uid="uid://bk6d5k8qmqi8u" path="res://components/player.tscn" id="1_0j7m4"]
+[ext_resource type="Script" uid="uid://c5ocl3miapial" path="res://scripts/Levels/world_two_level_three.gd" id="1_l21nm"]
+[ext_resource type="Script" uid="uid://covd7l75deid2" path="res://scripts/teleport_area.gd" id="1_v8cti"]
+[ext_resource type="PackedScene" uid="uid://cl5hfdk8jbegs" path="res://components/spike.tscn" id="3_rbjk1"]
+[ext_resource type="PackedScene" uid="uid://b0hon4tlqf67e" path="res://components/goal.tscn" id="5_wlhlw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0j7m4"]
+size = Vector2(1306, 20)
+
+[sub_resource type="Resource" id="Resource_rbjk1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l21nm"]
+size = Vector2(20, 793)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlhlw"]
+size = Vector2(20, 816)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbjk1"]
+size = Vector2(695, 148)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbja0"]
+size = Vector2(636, 143)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlqx3"]
+size = Vector2(636, 134)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8cti"]
+size = Vector2(723, 134)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75fq7"]
+size = Vector2(139, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmq3p"]
+size = Vector2(542, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clnf2"]
+size = Vector2(1048, 173)
+
+[sub_resource type="Animation" id="Animation_l21nm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../LeftSpikeRow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rbjk1"]
+resource_name = "start_trap"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 2.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1138, 0), Vector2(1138, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../LeftSpikeRow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 2.5, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-28, 0), Vector2(-28, 0), Vector2(0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"disable_first_fall_trap"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../../..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_trap_audio"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l21nm"]
+_data = {
+&"RESET": SubResource("Animation_l21nm"),
+&"start_trap": SubResource("Animation_rbjk1")
+}
+
+[sub_resource type="Animation" id="Animation_wlhlw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rbja0"]
+resource_name = "start_trap"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -97), Vector2(0, -97), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../../..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_trap_audio"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rlqx3"]
+_data = {
+&"RESET": SubResource("Animation_wlhlw"),
+&"start_trap": SubResource("Animation_rbja0")
+}
+
+[sub_resource type="Animation" id="Animation_rlqx3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-87, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_clnf2"]
+resource_name = "start_trap"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-87, 0), Vector2(1248, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_75fq7"]
+_data = {
+&"RESET": SubResource("Animation_rlqx3"),
+&"start_trap": SubResource("Animation_clnf2")
+}
+
+[node name="WorldTwoLevelThree" type="Node2D" unique_id=345570615]
+script = ExtResource("1_l21nm")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1473021685]
+z_index = -3
+offset_left = -34.0
+offset_top = -22.000002
+offset_right = 6.0
+offset_bottom = 17.999998
+scale = Vector2(30.902098, 17.24818)
+color = Color(0.23137255, 0.41960785, 0.7372549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="." unique_id=1755007542 instance=ExtResource("1_0j7m4")]
+position = Vector2(98, 474)
+
+[node name="Goal" parent="." unique_id=125260752 instance=ExtResource("5_wlhlw")]
+position = Vector2(187, 160)
+
+[node name="LevelLayout" type="Node2D" parent="." unique_id=518455203]
+
+[node name="FixedStructures" type="Node2D" parent="LevelLayout" unique_id=929427508]
+
+[node name="Bounds" type="Node2D" parent="LevelLayout/FixedStructures" unique_id=625820601]
+
+[node name="Area2D" type="Area2D" parent="LevelLayout/FixedStructures/Bounds" unique_id=1639141730 node_paths=PackedStringArray("reference_object") groups=["teleport"]]
+script = ExtResource("1_v8cti")
+reference_object = NodePath("TPPoint")
+metadata/axis = "vertical"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/FixedStructures/Bounds/Area2D" unique_id=41624816]
+position = Vector2(582, 715)
+shape = SubResource("RectangleShape2D_0j7m4")
+metadata/TPPosition = SubResource("Resource_rbjk1")
+
+[node name="TPPoint" type="Node2D" parent="LevelLayout/FixedStructures/Bounds/Area2D" unique_id=722219587]
+position = Vector2(135, -47)
+
+[node name="Area2D2" type="Area2D" parent="LevelLayout/FixedStructures/Bounds" unique_id=649860746 node_paths=PackedStringArray("reference_object") groups=["teleport"]]
+script = ExtResource("1_v8cti")
+reference_object = NodePath("TPPoint")
+metadata/axis = "horizontal"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/FixedStructures/Bounds/Area2D2" unique_id=632115181]
+position = Vector2(-46, 314.5)
+shape = SubResource("RectangleShape2D_l21nm")
+
+[node name="TPPoint" type="Node2D" parent="LevelLayout/FixedStructures/Bounds/Area2D2" unique_id=1177881652]
+position = Vector2(1176, 355)
+
+[node name="Area2D3" type="Area2D" parent="LevelLayout/FixedStructures/Bounds" unique_id=138780558 node_paths=PackedStringArray("reference_object") groups=["teleport"]]
+script = ExtResource("1_v8cti")
+reference_object = NodePath("TPPoint")
+metadata/axis = "horizontal"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/FixedStructures/Bounds/Area2D3" unique_id=1611899611]
+position = Vector2(1216, 282)
+shape = SubResource("RectangleShape2D_wlhlw")
+
+[node name="TPPoint" type="Node2D" parent="LevelLayout/FixedStructures/Bounds/Area2D3" unique_id=476191275]
+position = Vector2(-14, 286)
+
+[node name="Floor" type="Node2D" parent="LevelLayout/FixedStructures" unique_id=864424864]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LevelLayout/FixedStructures/Floor" unique_id=1504121310]
+position = Vector2(-218, 249)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/FixedStructures/Floor/StaticBody2D" unique_id=1779948386]
+position = Vector2(501.5, 350)
+shape = SubResource("RectangleShape2D_rbjk1")
+
+[node name="ColorRect" type="ColorRect" parent="LevelLayout/FixedStructures/Floor/StaticBody2D" unique_id=1258495745]
+offset_left = 212.99963
+offset_top = 276.00003
+offset_right = 260.04108
+offset_bottom = 289.78604
+scale = Vector2(13.520001, 9.719999)
+color = Color(0, 0.1882353, 0.47843137, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="LevelLayout/FixedStructures/Floor" unique_id=1389695923]
+position = Vector2(546, 249)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/FixedStructures/Floor/StaticBody2D2" unique_id=935709850]
+position = Vector2(531, 347.5)
+shape = SubResource("RectangleShape2D_rbja0")
+
+[node name="ColorRect" type="ColorRect" parent="LevelLayout/FixedStructures/Floor/StaticBody2D2" unique_id=508645866]
+offset_left = 212.99963
+offset_top = 276.00003
+offset_right = 260.04108
+offset_bottom = 289.78604
+scale = Vector2(13.520001, 9.719999)
+color = Color(0, 0.1882353, 0.47843137, 1)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="LevelLayout/FixedStructures/Floor" unique_id=1909026216]
+position = Vector2(-436, -58)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/FixedStructures/Floor/StaticBody2D3" unique_id=1517261285]
+position = Vector2(531, 343)
+shape = SubResource("RectangleShape2D_rlqx3")
+
+[node name="ColorRect" type="ColorRect" parent="LevelLayout/FixedStructures/Floor/StaticBody2D3" unique_id=1752321222]
+offset_left = 212.99963
+offset_top = 276.00003
+offset_right = 260.04108
+offset_bottom = 289.78604
+scale = Vector2(13.520001, 9.719999)
+color = Color(0, 0.1882353, 0.47843137, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="LevelLayout/FixedStructures/Floor" unique_id=674828503]
+position = Vector2(328, -58)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/FixedStructures/Floor/StaticBody2D4" unique_id=1668611736]
+position = Vector2(574.5, 343)
+shape = SubResource("RectangleShape2D_v8cti")
+
+[node name="ColorRect" type="ColorRect" parent="LevelLayout/FixedStructures/Floor/StaticBody2D4" unique_id=1103299274]
+offset_left = 212.99963
+offset_top = 276.00003
+offset_right = 260.04108
+offset_bottom = 289.78604
+scale = Vector2(13.520001, 9.719999)
+color = Color(0, 0.1882353, 0.47843137, 1)
+
+[node name="Ceiling" type="Node2D" parent="LevelLayout/FixedStructures" unique_id=582308159]
+
+[node name="Traps" type="Node2D" parent="LevelLayout" unique_id=1140492186]
+
+[node name="Fixed" type="Node2D" parent="LevelLayout/Traps" unique_id=1880756572]
+
+[node name="Spikes" type="Node2D" parent="LevelLayout/Traps/Fixed" unique_id=1947631559]
+
+[node name="Moving" type="Node2D" parent="LevelLayout/Traps" unique_id=1503474765]
+
+[node name="Triggers" type="Node2D" parent="LevelLayout/Traps/Moving" unique_id=1646020920]
+
+[node name="FirstFallTrigger" type="Area2D" parent="LevelLayout/Traps/Moving/Triggers" unique_id=7773888]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/Traps/Moving/Triggers/FirstFallTrigger" unique_id=2091752878]
+position = Vector2(695, 572)
+shape = SubResource("RectangleShape2D_75fq7")
+
+[node name="SecondWallTrigger" type="Area2D" parent="LevelLayout/Traps/Moving/Triggers" unique_id=1858021864]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/Traps/Moving/Triggers/SecondWallTrigger" unique_id=142795081]
+position = Vector2(697, 115)
+shape = SubResource("RectangleShape2D_tmq3p")
+
+[node name="Floor" type="Node2D" parent="LevelLayout/Traps/Moving" unique_id=327025964]
+
+[node name="FirstMovingWall" type="Node2D" parent="LevelLayout/Traps/Moving/Floor" unique_id=190909261]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LevelLayout/Traps/Moving/Floor/FirstMovingWall" unique_id=70866749]
+position = Vector2(-958, 76)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/Traps/Moving/Floor/FirstMovingWall/StaticBody2D" unique_id=1601801009]
+position = Vector2(325, 362.5)
+shape = SubResource("RectangleShape2D_clnf2")
+
+[node name="ColorRect" type="ColorRect" parent="LevelLayout/Traps/Moving/Floor/FirstMovingWall/StaticBody2D" unique_id=764324284]
+offset_left = -199.0
+offset_top = 276.00003
+offset_right = -151.95898
+offset_bottom = 293.80103
+scale = Vector2(22.28, 9.72)
+color = Color(0, 0.1882353, 0.47843137, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Spike" parent="LevelLayout/Traps/Moving/Floor/FirstMovingWall" unique_id=1650476415 instance=ExtResource("3_rbjk1")]
+position = Vector2(-75, 372)
+rotation = 1.5707964
+
+[node name="Spike2" parent="LevelLayout/Traps/Moving/Floor/FirstMovingWall" unique_id=1568375380 instance=ExtResource("3_rbjk1")]
+position = Vector2(-75, 398)
+rotation = 1.5707964
+
+[node name="Spike3" parent="LevelLayout/Traps/Moving/Floor/FirstMovingWall" unique_id=1855859031 instance=ExtResource("3_rbjk1")]
+position = Vector2(-74.99999, 423.99997)
+rotation = 1.5707964
+
+[node name="Spike4" parent="LevelLayout/Traps/Moving/Floor/FirstMovingWall" unique_id=254922833 instance=ExtResource("3_rbjk1")]
+position = Vector2(-74.99999, 450)
+rotation = 1.5707964
+
+[node name="Spike5" parent="LevelLayout/Traps/Moving/Floor/FirstMovingWall" unique_id=1799254864 instance=ExtResource("3_rbjk1")]
+position = Vector2(-75, 476)
+rotation = 1.5707964
+
+[node name="Spike6" parent="LevelLayout/Traps/Moving/Floor/FirstMovingWall" unique_id=925863874 instance=ExtResource("3_rbjk1")]
+position = Vector2(-75, 502.00003)
+rotation = 1.5707964
+
+[node name="FirstMovingWallAnim" type="AnimationPlayer" parent="LevelLayout/Traps/Moving/Floor/FirstMovingWall" unique_id=1603654239]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_l21nm")
+
+[node name="LeftSpikeRow" type="Node2D" parent="LevelLayout/Traps/Moving/Floor" unique_id=192432573]
+
+[node name="Spike7" parent="LevelLayout/Traps/Moving/Floor/LeftSpikeRow" unique_id=1164072241 instance=ExtResource("3_rbjk1")]
+position = Vector2(1146, 372.00003)
+rotation = -1.5707964
+
+[node name="Spike8" parent="LevelLayout/Traps/Moving/Floor/LeftSpikeRow" unique_id=718165024 instance=ExtResource("3_rbjk1")]
+position = Vector2(1146, 398)
+rotation = -1.5707964
+
+[node name="Spike9" parent="LevelLayout/Traps/Moving/Floor/LeftSpikeRow" unique_id=1193012545 instance=ExtResource("3_rbjk1")]
+position = Vector2(1146, 423.99997)
+rotation = -1.5707964
+
+[node name="Spike10" parent="LevelLayout/Traps/Moving/Floor/LeftSpikeRow" unique_id=1409462188 instance=ExtResource("3_rbjk1")]
+position = Vector2(1146, 449.99997)
+rotation = -1.5707964
+
+[node name="Spike11" parent="LevelLayout/Traps/Moving/Floor/LeftSpikeRow" unique_id=560385564 instance=ExtResource("3_rbjk1")]
+position = Vector2(1146, 476)
+rotation = -1.5707964
+
+[node name="Spike12" parent="LevelLayout/Traps/Moving/Floor/LeftSpikeRow" unique_id=1753978336 instance=ExtResource("3_rbjk1")]
+position = Vector2(1146, 501)
+rotation = -1.5707964
+
+[node name="FirstFall" type="Node2D" parent="LevelLayout/Traps/Moving/Floor" unique_id=858738582]
+unique_name_in_owner = true
+
+[node name="ColorRect" type="ColorRect" parent="LevelLayout/Traps/Moving/Floor/FirstFall" unique_id=1316680938]
+offset_left = 631.0
+offset_top = 687.0
+offset_right = 759.0
+offset_bottom = 822.0
+color = Color(0, 0.1882353, 0.47843137, 1)
+
+[node name="Spike" parent="LevelLayout/Traps/Moving/Floor/FirstFall" unique_id=995722616 instance=ExtResource("3_rbjk1")]
+position = Vector2(656, 653.00006)
+
+[node name="Spike2" parent="LevelLayout/Traps/Moving/Floor/FirstFall" unique_id=704513146 instance=ExtResource("3_rbjk1")]
+position = Vector2(682, 653)
+
+[node name="Spike3" parent="LevelLayout/Traps/Moving/Floor/FirstFall" unique_id=477408987 instance=ExtResource("3_rbjk1")]
+position = Vector2(708, 653.00006)
+
+[node name="Spike4" parent="LevelLayout/Traps/Moving/Floor/FirstFall" unique_id=1789108084 instance=ExtResource("3_rbjk1")]
+position = Vector2(734, 653)
+
+[node name="FirstFallAnim" type="AnimationPlayer" parent="LevelLayout/Traps/Moving/Floor/FirstFall" unique_id=1414635645]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_rlqx3")
+
+[node name="SecondMovingWall" type="Node2D" parent="LevelLayout/Traps/Moving/Floor" unique_id=752196984]
+position = Vector2(-87, 0)
+
+[node name="ColorRect" type="ColorRect" parent="LevelLayout/Traps/Moving/Floor/SecondMovingWall" unique_id=1982473246]
+offset_right = 40.0
+offset_bottom = 218.0
+color = Color(0, 0.1882353, 0.47843137, 1)
+
+[node name="Spike" parent="LevelLayout/Traps/Moving/Floor/SecondMovingWall" unique_id=1016052612 instance=ExtResource("3_rbjk1")]
+position = Vector2(74, 18)
+rotation = 1.5707964
+
+[node name="Spike2" parent="LevelLayout/Traps/Moving/Floor/SecondMovingWall" unique_id=232767636 instance=ExtResource("3_rbjk1")]
+position = Vector2(74, 44.000004)
+rotation = 1.5707964
+
+[node name="Spike3" parent="LevelLayout/Traps/Moving/Floor/SecondMovingWall" unique_id=1507435749 instance=ExtResource("3_rbjk1")]
+position = Vector2(74, 70.00001)
+rotation = 1.5707964
+
+[node name="Spike4" parent="LevelLayout/Traps/Moving/Floor/SecondMovingWall" unique_id=2118139300 instance=ExtResource("3_rbjk1")]
+position = Vector2(74, 96)
+rotation = 1.5707964
+
+[node name="Spike5" parent="LevelLayout/Traps/Moving/Floor/SecondMovingWall" unique_id=1032693851 instance=ExtResource("3_rbjk1")]
+position = Vector2(74, 122.000015)
+rotation = 1.5707964
+
+[node name="Spike6" parent="LevelLayout/Traps/Moving/Floor/SecondMovingWall" unique_id=200164790 instance=ExtResource("3_rbjk1")]
+position = Vector2(74, 148.00002)
+rotation = 1.5707964
+
+[node name="Spike7" parent="LevelLayout/Traps/Moving/Floor/SecondMovingWall" unique_id=2072774961 instance=ExtResource("3_rbjk1")]
+position = Vector2(74, 174)
+rotation = 1.5707964
+
+[node name="Spike8" parent="LevelLayout/Traps/Moving/Floor/SecondMovingWall" unique_id=32599213 instance=ExtResource("3_rbjk1")]
+position = Vector2(74, 200.00002)
+rotation = 1.5707964
+
+[node name="SecondMovingWallAnim" type="AnimationPlayer" parent="LevelLayout/Traps/Moving/Floor/SecondMovingWall" unique_id=214088015]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_75fq7")
+
+[node name="Sounds" type="Node2D" parent="LevelLayout" unique_id=223845913]
+
+[connection signal="area_entered" from="LevelLayout/Traps/Moving/Triggers/FirstFallTrigger" to="." method="_on_first_fall_trigger_area_entered"]
+[connection signal="area_entered" from="LevelLayout/Traps/Moving/Triggers/SecondWallTrigger" to="." method="_on_second_wall_trigger_area_entered"]

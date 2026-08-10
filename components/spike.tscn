@@ -1,17 +1,34 @@
 [gd_scene format=3 uid="uid://cl5hfdk8jbegs"]
 
-[ext_resource type="Texture2D" uid="uid://b53cexpe7kwi4" path="res://assets/spike.png" id="1_rlul2"]
+[ext_resource type="Script" uid="uid://7mbc4w7amqtr" path="res://scripts/spike.gd" id="1_ivkfj"]
+[ext_resource type="Texture2D" uid="uid://b53cexpe7kwi4" path="res://assets/Hazards/spike.png" id="1_rlul2"]
+[ext_resource type="Texture2D" uid="uid://bftosqymibf04" path="res://assets/Hazards/spike_blue.png" id="3_8ax5c"]
+[ext_resource type="Texture2D" uid="uid://bd8y1xng85jnt" path="res://assets/Hazards/spike_pink.png" id="4_4cfnx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ivkfj"]
 size = Vector2(4, 10)
 
-[node name="Spike" type="CharacterBody2D" unique_id=1650476415]
+[node name="Spike" type="CharacterBody2D" unique_id=1650476415 node_paths=PackedStringArray("spikes")]
 scale = Vector2(1.7199992, 1.7199992)
+script = ExtResource("1_ivkfj")
+spikes = [NodePath("World1"), NodePath("World2"), NodePath("World3")]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=96449136]
+[node name="World1" type="Sprite2D" parent="." unique_id=96449136]
 texture_filter = 1
 scale = Vector2(2.520001, 2.520001)
 texture = ExtResource("1_rlul2")
+
+[node name="World2" type="Sprite2D" parent="." unique_id=1861419851]
+visible = false
+texture_filter = 1
+scale = Vector2(2.5200012, 2.5200012)
+texture = ExtResource("3_8ax5c")
+
+[node name="World3" type="Sprite2D" parent="." unique_id=1920693988]
+visible = false
+texture_filter = 1
+scale = Vector2(2.5200012, 2.5200012)
+texture = ExtResource("4_4cfnx")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=233952924 groups=["hazard"]]
 

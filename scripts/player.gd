@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 @export var SPEED: float = 300.00
 @export var JUMP_FORCE: float = -500.00
-@export var GRAVITY: float = 30
+@export var GRAVITY: float = 30.0
+@export var MAX_FALLING_VEL: float = 800
 
 @onready var player_sprite = %AnimatedSprite2D
 @onready var death_particles: PackedScene = preload("res://components/explosion_particles.tscn")
@@ -18,12 +19,17 @@ var is_jumping = false
 var direction
 
 func _physics_process(_delta):
-	if GameManager.player_dead: return
+	if (
+		GameManager.player_dead
+		or GameManager.player_winning
+	): return
 	
 	if !is_on_floor():
 		is_jumping = true
 		player_sprite.play("jumping")
-		velocity.y += GRAVITY
+		
+		if velocity.y < MAX_FALLING_VEL:
+			velocity.y += GRAVITY
 	else:
 		is_jumping = false
 	
@@ -74,6 +80,8 @@ func _on_area_2d_area_entered(area: Area2D):
 	elif area.is_in_group("goal"):
 		if GameManager.player_winning: return
 		_win(area)
+	elif area.is_in_group("teleport") and area.has_method("get_coordenates") and area.has_meta("axis"):
+		_teleport(area)
 
 func _die():
 	var explosion = death_particles.instantiate()
@@ -89,10 +97,23 @@ func _die():
 	queue_free()
 
 func _win(area: Area2D):
+	GameManager.player_winning = true
+	
+	%GoalSFX.play()
 	hide()
-	area.get_parent().get_node("AnimatedSprite2D").play("disappearing")
+	area.get_parent().get_node("ActiveGoal").play("disappearing")
 	
 	await get_tree().create_timer(0.5).timeout
 	Signals.player_won.emit()
 	
+	GameManager.player_winning = false
 	queue_free()
+
+func _teleport(area: Area2D):
+	if !area.has_meta("axis"): return
+	var tp_axis = area.get_meta("axis")
+	
+	if tp_axis == "horizontal":
+		global_position.x = area.get_coordenates().x
+	elif tp_axis == "vertical":
+		global_position.y = area.get_coordenates().y

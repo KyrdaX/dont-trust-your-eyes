@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://bk6d5k8qmqi8u"]
 
-[ext_resource type="Texture2D" uid="uid://dffsy1wloavay" path="res://assets/player_idling.png" id="1_0g4kb"]
+[ext_resource type="Texture2D" uid="uid://dffsy1wloavay" path="res://assets/Player/player_idling.png" id="1_0g4kb"]
 [ext_resource type="Script" uid="uid://ukf47p2ok2k7" path="res://scripts/player.gd" id="1_5odhx"]
-[ext_resource type="Texture2D" uid="uid://bpwm32cmyl0kl" path="res://assets/player_jumping.png" id="2_uapwn"]
-[ext_resource type="Texture2D" uid="uid://vapcb00x18vi" path="res://assets/player_walking.png" id="3_5odhx"]
+[ext_resource type="Texture2D" uid="uid://bpwm32cmyl0kl" path="res://assets/Player/player_jumping.png" id="2_uapwn"]
+[ext_resource type="Texture2D" uid="uid://vapcb00x18vi" path="res://assets/Player/player_walking.png" id="3_5odhx"]
+[ext_resource type="AudioStream" uid="uid://idcjfqjuh3oh" path="res://assets/sounds/660770__madpancake__hit-impact.ogg" id="5_1kub6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0g4kb"]
 atlas = ExtResource("1_0g4kb")
@@ -116,12 +117,19 @@ position = Vector2(0, -4)
 scale = Vector2(1, 0.8)
 shape = SubResource("CapsuleShape2D_5odhx")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=480923754]
+[node name="Area2D" type="Area2D" parent="." unique_id=480923754 groups=["player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1230999152]
 modulate = Color(0.5211636, 0.0007340902, 0.6280065, 1)
 position = Vector2(0, -2.4390252)
 scale = Vector2(0.72000134, 1.1463414)
 shape = SubResource("RectangleShape2D_7ta67")
+
+[node name="Sounds" type="Node2D" parent="." unique_id=1906665681]
+
+[node name="GoalSFX" type="AudioStreamPlayer" parent="Sounds" unique_id=567677440]
+unique_name_in_owner = true
+stream = ExtResource("5_1kub6")
+bus = &"SFX"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

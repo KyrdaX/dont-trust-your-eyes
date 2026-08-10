@@ -11,7 +11,10 @@ config_version=5
 [application]
 
 config/name="DontTrustYourEyes"
+run/main_scene="uid://de6vmdg0cbll6"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
@@ -19,6 +22,12 @@ config/icon="res://icon.svg"
 RPCUpdater="*uid://dkc64v5begkx3"
 GameManager="*uid://866gwp3hsfyk"
 Signals="*uid://cj3pqxuvy6mdu"
+
+[display]
+
+window/size/mode=3
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 
@@ -38,6 +47,8 @@ folder_colors={
 
 hazard="A group for all hazards in the game"
 goal=""
+player=""
+teleport=""
 
 [input]
 

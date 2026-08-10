@@ -1,0 +1,346 @@
+[gd_scene format=3 uid="uid://bhvi5u1t66frq"]
+
+[ext_resource type="Script" uid="uid://dhcx6obk7knyh" path="res://scripts/Levels/world_one_level_three.gd" id="1_g8nxn"]
+[ext_resource type="PackedScene" uid="uid://b0hon4tlqf67e" path="res://components/goal.tscn" id="2_ne28o"]
+[ext_resource type="PackedScene" uid="uid://bk6d5k8qmqi8u" path="res://components/player.tscn" id="3_rgwuy"]
+[ext_resource type="PackedScene" uid="uid://cl5hfdk8jbegs" path="res://components/spike.tscn" id="4_s0s8g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbjs8"]
+size = Vector2(20, 664)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6hew"]
+size = Vector2(117.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5f4rd"]
+size = Vector2(363, 419)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0l2rv"]
+size = Vector2(324, 419)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwxen"]
+size = Vector2(20, 104)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wj13j"]
+size = Vector2(20, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8nxn"]
+size = Vector2(76, 20)
+
+[sub_resource type="Animation" id="Animation_a0k7i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0l2rv"]
+resource_name = "end_trap"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(79, 0), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../../..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_trap_audio"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_5f4rd"]
+resource_name = "start_trap"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(79, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a0k7i"]
+_data = {
+&"RESET": SubResource("Animation_a0k7i"),
+&"end_trap": SubResource("Animation_0l2rv"),
+&"start_trap": SubResource("Animation_5f4rd")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0k7i"]
+size = Vector2(106, 20)
+
+[sub_resource type="Animation" id="Animation_x6hew"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wj13j"]
+resource_name = "end_trap"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(114, 0), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../../..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_trap_audio"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_fwxen"]
+resource_name = "start_trap"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(114, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x6hew"]
+_data = {
+&"RESET": SubResource("Animation_x6hew"),
+&"end_trap": SubResource("Animation_wj13j"),
+&"start_trap": SubResource("Animation_fwxen")
+}
+
+[node name="WorldOneLevelThree" type="Node2D" unique_id=90495090]
+script = ExtResource("1_g8nxn")
+
+[node name="Goal" parent="." unique_id=125260752 instance=ExtResource("2_ne28o")]
+position = Vector2(1009, 213.99998)
+
+[node name="Player" parent="." unique_id=1755007542 instance=ExtResource("3_rgwuy")]
+position = Vector2(109, 118)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1559530379]
+z_index = -3
+offset_left = -41.0
+offset_top = -19.0
+offset_right = -1.0
+offset_bottom = 21.0
+scale = Vector2(30.902098, 17.24818)
+color = Color(0.73658204, 0.41962102, 0.23102042, 1)
+
+[node name="LevelLayout" type="Node2D" parent="." unique_id=518455203]
+
+[node name="FixedStructures" type="Node2D" parent="LevelLayout" unique_id=929427508]
+
+[node name="Bounds" type="Node2D" parent="LevelLayout/FixedStructures" unique_id=625820601]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LevelLayout/FixedStructures/Bounds" unique_id=1745647567]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/FixedStructures/Bounds/StaticBody2D" unique_id=734358448]
+position = Vector2(0, 322)
+shape = SubResource("RectangleShape2D_lbjs8")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="LevelLayout/FixedStructures/Bounds" unique_id=1318590505]
+position = Vector2(1152, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/FixedStructures/Bounds/StaticBody2D2" unique_id=739448792]
+position = Vector2(0, 322)
+shape = SubResource("RectangleShape2D_lbjs8")
+
+[node name="Area2D" type="Area2D" parent="LevelLayout/FixedStructures/Bounds" unique_id=1252379486 groups=["hazard"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/FixedStructures/Bounds/Area2D" unique_id=660934984]
+position = Vector2(411.5, 457)
+shape = SubResource("RectangleShape2D_x6hew")
+
+[node name="Area2D2" type="Area2D" parent="LevelLayout/FixedStructures/Bounds" unique_id=312304823 groups=["hazard"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/FixedStructures/Bounds/Area2D2" unique_id=1575297117]
+position = Vector2(818.25, 457)
+shape = SubResource("RectangleShape2D_x6hew")
+
+[node name="Floor" type="Node2D" parent="LevelLayout/FixedStructures" unique_id=864424864]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LevelLayout/FixedStructures/Floor" unique_id=512720902]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/FixedStructures/Floor/StaticBody2D" unique_id=1838040125]
+position = Vector2(183.5, 481.5)
+shape = SubResource("RectangleShape2D_5f4rd")
+
+[node name="ColorRect" type="ColorRect" parent="LevelLayout/FixedStructures/Floor/StaticBody2D" unique_id=1035662813]
+offset_left = -139.0
+offset_top = 272.0
+offset_right = -101.72189
+offset_bottom = 312.0
+scale = Vector2(13.520001, 9.719999)
+color = Color(0.4509804, 0.18431373, 0, 1)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="LevelLayout/FixedStructures/Floor" unique_id=1862170074]
+position = Vector2(439, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/FixedStructures/Floor/StaticBody2D2" unique_id=1278828814]
+position = Vector2(164, 481.5)
+shape = SubResource("RectangleShape2D_0l2rv")
+
+[node name="ColorRect" type="ColorRect" parent="LevelLayout/FixedStructures/Floor/StaticBody2D2" unique_id=90573681]
+offset_left = 2.0000043
+offset_top = 272.0
+offset_right = 25.9645
+offset_bottom = 312.0
+scale = Vector2(13.520001, 9.719999)
+color = Color(0.4509804, 0.18431373, 0, 1)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="LevelLayout/FixedStructures/Floor" unique_id=1042325316]
+position = Vector2(869, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/FixedStructures/Floor/StaticBody2D3" unique_id=1609816739]
+position = Vector2(164, 481.5)
+shape = SubResource("RectangleShape2D_0l2rv")
+
+[node name="ColorRect" type="ColorRect" parent="LevelLayout/FixedStructures/Floor/StaticBody2D3" unique_id=518161705]
+offset_left = 2.0000043
+offset_top = 272.0
+offset_right = 46.600594
+offset_bottom = 312.0
+scale = Vector2(13.520001, 9.719999)
+color = Color(0.4509804, 0.18431373, 0, 1)
+
+[node name="Traps" type="Node2D" parent="LevelLayout" unique_id=1140492186]
+
+[node name="Fixed" type="Node2D" parent="LevelLayout/Traps" unique_id=1880756572]
+
+[node name="Spikes" type="Node2D" parent="LevelLayout/Traps/Fixed" unique_id=1947631559]
+
+[node name="Spike" parent="LevelLayout/Traps/Fixed/Spikes" unique_id=1650476415 instance=ExtResource("4_s0s8g")]
+position = Vector2(454, 238)
+
+[node name="Spike2" parent="LevelLayout/Traps/Fixed/Spikes" unique_id=987299286 instance=ExtResource("4_s0s8g")]
+position = Vector2(480, 238)
+
+[node name="Spike3" parent="LevelLayout/Traps/Fixed/Spikes" unique_id=2133227503 instance=ExtResource("4_s0s8g")]
+position = Vector2(505.99997, 238)
+
+[node name="Spike4" parent="LevelLayout/Traps/Fixed/Spikes" unique_id=1128597996 instance=ExtResource("4_s0s8g")]
+position = Vector2(700, 238)
+
+[node name="Spike5" parent="LevelLayout/Traps/Fixed/Spikes" unique_id=2119275768 instance=ExtResource("4_s0s8g")]
+position = Vector2(726, 238)
+
+[node name="Spike6" parent="LevelLayout/Traps/Fixed/Spikes" unique_id=1118705392 instance=ExtResource("4_s0s8g")]
+position = Vector2(752, 238)
+
+[node name="Moving" type="Node2D" parent="LevelLayout/Traps" unique_id=1503474765]
+
+[node name="Triggers" type="Node2D" parent="LevelLayout/Traps/Moving" unique_id=1646020920]
+
+[node name="MovingFloor1Trigger" type="Area2D" parent="LevelLayout/Traps/Moving/Triggers" unique_id=73598662]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/Traps/Moving/Triggers/MovingFloor1Trigger" unique_id=1193559972]
+position = Vector2(352, 213)
+shape = SubResource("RectangleShape2D_fwxen")
+
+[node name="MovingFloor2Trigger" type="Area2D" parent="LevelLayout/Traps/Moving/Triggers" unique_id=387887202]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/Traps/Moving/Triggers/MovingFloor2Trigger" unique_id=820688012]
+position = Vector2(718, 199.5)
+shape = SubResource("RectangleShape2D_wj13j")
+
+[node name="Floor" type="Node2D" parent="LevelLayout/Traps/Moving" unique_id=327025964]
+
+[node name="MovingFloor1" type="StaticBody2D" parent="LevelLayout/Traps/Moving/Floor" unique_id=1159715103]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/Traps/Moving/Floor/MovingFloor1" unique_id=1570049748]
+position = Vector2(403, 282)
+shape = SubResource("RectangleShape2D_g8nxn")
+
+[node name="ColorRect" type="ColorRect" parent="LevelLayout/Traps/Moving/Floor/MovingFloor1" unique_id=1514075157]
+offset_left = 365.0
+offset_top = 272.0
+offset_right = 441.0
+offset_bottom = 661.0
+color = Color(0.4509804, 0.18431373, 0, 1)
+
+[node name="MovingFloor1Anim" type="AnimationPlayer" parent="LevelLayout/Traps/Moving/Floor/MovingFloor1" unique_id=123353945]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_a0k7i")
+
+[node name="MovingFloor2" type="StaticBody2D" parent="LevelLayout/Traps/Moving/Floor" unique_id=337046618]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/Traps/Moving/Floor/MovingFloor2" unique_id=1942272437]
+position = Vector2(818, 282)
+shape = SubResource("RectangleShape2D_a0k7i")
+
+[node name="ColorRect" type="ColorRect" parent="LevelLayout/Traps/Moving/Floor/MovingFloor2" unique_id=609093728]
+offset_left = 765.0
+offset_top = 272.0
+offset_right = 871.0
+offset_bottom = 661.0
+color = Color(0.4509804, 0.18431373, 0, 1)
+
+[node name="MovingFloor2Anim" type="AnimationPlayer" parent="LevelLayout/Traps/Moving/Floor/MovingFloor2" unique_id=1684992089]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_x6hew")
+
+[node name="Sounds" type="Node2D" parent="LevelLayout" unique_id=44581060]
+
+[connection signal="area_entered" from="LevelLayout/Traps/Moving/Triggers/MovingFloor1Trigger" to="." method="_on_moving_floor_1_trigger_area_entered"]
+[connection signal="area_entered" from="LevelLayout/Traps/Moving/Triggers/MovingFloor2Trigger" to="." method="_on_moving_floor_2_trigger_area_entered"]
+[connection signal="animation_finished" from="LevelLayout/Traps/Moving/Floor/MovingFloor1/MovingFloor1Anim" to="." method="_on_moving_floor_1_anim_animation_finished"]
+[connection signal="animation_finished" from="LevelLayout/Traps/Moving/Floor/MovingFloor2/MovingFloor2Anim" to="." method="_on_moving_floor_2_anim_animation_finished"]

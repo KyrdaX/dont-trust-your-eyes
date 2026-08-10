@@ -16,6 +16,7 @@ initial_velocity_max = 300.0
 gravity = Vector3(0, 600, 0)
 
 [node name="Particles" type="GPUParticles2D" unique_id=643490949]
+z_index = 10
 position = Vector2(-2, 0)
 emitting = false
 amount = 12

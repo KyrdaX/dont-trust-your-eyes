@@ -1,0 +1,575 @@
+[gd_scene format=3 uid="uid://cn11svn32h0go"]
+
+[ext_resource type="Script" uid="uid://c15bc7fo0q68t" path="res://scripts/menu.gd" id="1_con2f"]
+[ext_resource type="FontFile" uid="uid://dkbc7in5kqdxs" path="res://assets/Fonts/PixelifySans-VariableFont_wght.ttf" id="1_vjb58"]
+[ext_resource type="AudioStream" uid="uid://d2hmqpane6kxi" path="res://assets/sounds/menu_loop.mp3" id="1_yqeox"]
+
+[sub_resource type="Animation" id="Animation_mhnvy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_con2f"]
+resource_name = "bg_scroll"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -2140)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mhnvy"]
+_data = {
+&"RESET": SubResource("Animation_mhnvy"),
+&"bg_scroll": SubResource("Animation_con2f")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_con2f"]
+font = ExtResource("1_vjb58")
+font_size = 63
+
+[sub_resource type="LabelSettings" id="LabelSettings_mhnvy"]
+font = ExtResource("1_vjb58")
+font_size = 63
+
+[sub_resource type="LabelSettings" id="LabelSettings_4ytvr"]
+font = ExtResource("1_vjb58")
+font_size = 63
+
+[sub_resource type="LabelSettings" id="LabelSettings_g3eks"]
+font = ExtResource("1_vjb58")
+font_size = 63
+
+[sub_resource type="LabelSettings" id="LabelSettings_v86rl"]
+font = ExtResource("1_vjb58")
+font_size = 63
+
+[sub_resource type="LabelSettings" id="LabelSettings_13sgg"]
+font = ExtResource("1_vjb58")
+font_size = 63
+
+[sub_resource type="LabelSettings" id="LabelSettings_i6lef"]
+font = ExtResource("1_vjb58")
+font_size = 63
+
+[sub_resource type="LabelSettings" id="LabelSettings_70i5f"]
+font = ExtResource("1_vjb58")
+font_size = 63
+
+[sub_resource type="LabelSettings" id="LabelSettings_mj5lg"]
+font = ExtResource("1_vjb58")
+font_size = 63
+
+[sub_resource type="LabelSettings" id="LabelSettings_ufwb2"]
+font = ExtResource("1_vjb58")
+font_size = 63
+
+[sub_resource type="LabelSettings" id="LabelSettings_6cdou"]
+font = ExtResource("1_vjb58")
+font_size = 63
+
+[sub_resource type="LabelSettings" id="LabelSettings_i42df"]
+font = ExtResource("1_vjb58")
+font_size = 63
+
+[sub_resource type="LabelSettings" id="LabelSettings_7jp70"]
+font = ExtResource("1_vjb58")
+font_size = 63
+
+[sub_resource type="LabelSettings" id="LabelSettings_vjb58"]
+font = ExtResource("1_vjb58")
+font_size = 77
+
+[sub_resource type="LabelSettings" id="LabelSettings_mxgkd"]
+font = ExtResource("1_vjb58")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_g6gyw"]
+font = ExtResource("1_vjb58")
+font_size = 50
+
+[node name="Menu" type="Control" unique_id=77552399]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_con2f")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1607169095]
+
+[node name="Bg" type="Node2D" parent="CanvasLayer" unique_id=506408545]
+unique_name_in_owner = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Bg" unique_id=1801618692]
+z_index = -1
+offset_left = -36.0
+offset_top = -22.0
+offset_right = 1189.0
+offset_bottom = 688.0
+color = Color(0.7372549, 0.41960785, 0.23137255, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/Bg" unique_id=224563382]
+z_index = -1
+offset_left = -36.0
+offset_top = 688.0
+offset_right = 1189.0
+offset_bottom = 1398.0
+color = Color(0.23137255, 0.41960785, 0.7372549, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer/Bg" unique_id=197233551]
+z_index = -1
+offset_left = -36.0
+offset_top = 1398.0
+offset_right = 1189.0
+offset_bottom = 2108.0
+color = Color(0.7372549, 0.23137255, 0.5411765, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="CanvasLayer/Bg" unique_id=103262261]
+z_index = -1
+offset_left = -36.0
+offset_top = 2108.0
+offset_right = 1189.0
+offset_bottom = 2818.0
+color = Color(0.7372549, 0.41960785, 0.23137255, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Bg" unique_id=2142377124]
+libraries/ = SubResource("AnimationLibrary_mhnvy")
+autoplay = &"bg_scroll"
+
+[node name="MenuButtons" type="Node2D" parent="CanvasLayer" unique_id=1504955821]
+unique_name_in_owner = true
+
+[node name="PlayButton" type="Node2D" parent="CanvasLayer/MenuButtons" unique_id=394737983]
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/MenuButtons/PlayButton" unique_id=615672315 groups=["green_hover"]]
+offset_left = 506.0
+offset_top = 308.0
+offset_right = 648.0
+offset_bottom = 380.0
+theme_type_variation = &"FlatButton"
+flat = true
+
+[node name="PlayLabel" type="Label" parent="CanvasLayer/MenuButtons/PlayButton" unique_id=303995660]
+unique_name_in_owner = true
+offset_top = 300.0
+offset_right = 1152.0
+offset_bottom = 376.0
+text = "Play"
+label_settings = SubResource("LabelSettings_con2f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsButton" type="Node2D" parent="CanvasLayer/MenuButtons" unique_id=1952059906]
+position = Vector2(0, 76)
+
+[node name="CreditsButton" type="Button" parent="CanvasLayer/MenuButtons/CreditsButton" unique_id=570364701 groups=["green_hover"]]
+offset_left = 449.0
+offset_top = 310.0
+offset_right = 707.0
+offset_bottom = 371.0
+theme_type_variation = &"FlatButton"
+flat = true
+
+[node name="CreditsLabel" type="Label" parent="CanvasLayer/MenuButtons/CreditsButton" unique_id=850242966]
+unique_name_in_owner = true
+offset_top = 300.0
+offset_right = 1152.0
+offset_bottom = 376.0
+text = "Credits"
+label_settings = SubResource("LabelSettings_mhnvy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitButton" type="Node2D" parent="CanvasLayer/MenuButtons" unique_id=159325916]
+position = Vector2(0, 152)
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/MenuButtons/ExitButton" unique_id=15663227 groups=["red_hover"]]
+offset_left = 500.0
+offset_top = 306.0
+offset_right = 652.0
+offset_bottom = 374.0
+theme_type_variation = &"FlatButton"
+flat = true
+
+[node name="ExitLabel" type="Label" parent="CanvasLayer/MenuButtons/ExitButton" unique_id=1179631461]
+unique_name_in_owner = true
+offset_top = 300.0
+offset_right = 1152.0
+offset_bottom = 376.0
+text = "Exit"
+label_settings = SubResource("LabelSettings_4ytvr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WorldSelection" type="Node2D" parent="CanvasLayer" unique_id=1905679648]
+unique_name_in_owner = true
+position = Vector2(-1381, 42)
+
+[node name="World1Button" type="Node2D" parent="CanvasLayer/WorldSelection" unique_id=1323758262]
+
+[node name="World1Button" type="Button" parent="CanvasLayer/WorldSelection/World1Button" unique_id=1339720271 groups=["green_hover", "world_button"]]
+offset_left = 461.0
+offset_top = 308.0
+offset_right = 693.0
+offset_bottom = 380.0
+theme_type_variation = &"FlatButton"
+flat = true
+metadata/world = 1
+
+[node name="World1Label" type="Label" parent="CanvasLayer/WorldSelection/World1Button" unique_id=1437025647]
+unique_name_in_owner = true
+offset_top = 300.0
+offset_right = 1152.0
+offset_bottom = 376.0
+text = "World 1"
+label_settings = SubResource("LabelSettings_g3eks")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="World2Button" type="Node2D" parent="CanvasLayer/WorldSelection" unique_id=771493946]
+position = Vector2(328, 0)
+
+[node name="World2Button" type="Button" parent="CanvasLayer/WorldSelection/World2Button" unique_id=1977219032 groups=["green_hover", "world_button"]]
+offset_left = 461.0
+offset_top = 308.0
+offset_right = 693.0
+offset_bottom = 380.0
+theme_type_variation = &"FlatButton"
+flat = true
+metadata/world = 2
+
+[node name="World2Label" type="Label" parent="CanvasLayer/WorldSelection/World2Button" unique_id=513698598]
+unique_name_in_owner = true
+offset_top = 300.0
+offset_right = 1152.0
+offset_bottom = 376.0
+text = "World 2"
+label_settings = SubResource("LabelSettings_v86rl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="World3Button" type="Node2D" parent="CanvasLayer/WorldSelection" unique_id=116844295]
+position = Vector2(656, 0)
+
+[node name="World3Button" type="Button" parent="CanvasLayer/WorldSelection/World3Button" unique_id=1820511089 groups=["green_hover", "world_button"]]
+offset_left = 461.0
+offset_top = 308.0
+offset_right = 693.0
+offset_bottom = 380.0
+theme_type_variation = &"FlatButton"
+flat = true
+metadata/world = 3
+
+[node name="World3Label" type="Label" parent="CanvasLayer/WorldSelection/World3Button" unique_id=1526405135]
+unique_name_in_owner = true
+offset_top = 300.0
+offset_right = 1152.0
+offset_bottom = 376.0
+text = "World 3"
+label_settings = SubResource("LabelSettings_13sgg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Node2D" parent="CanvasLayer/WorldSelection" unique_id=1789747746]
+position = Vector2(335, 158)
+
+[node name="BackButton" type="Button" parent="CanvasLayer/WorldSelection/Back" unique_id=503448638 groups=["red_hover"]]
+offset_left = 494.0
+offset_top = 256.0
+offset_right = 660.0
+offset_bottom = 328.0
+theme_type_variation = &"FlatButton"
+flat = true
+
+[node name="BackLabel" type="Label" parent="CanvasLayer/WorldSelection/Back" unique_id=929599451]
+unique_name_in_owner = true
+offset_top = 252.0
+offset_right = 1152.0
+offset_bottom = 328.0
+text = "Back"
+label_settings = SubResource("LabelSettings_i6lef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelSelection" type="Node2D" parent="CanvasLayer" unique_id=1349355394]
+unique_name_in_owner = true
+position = Vector2(-1053, -70)
+
+[node name="Level1Button" type="Node2D" parent="CanvasLayer/LevelSelection" unique_id=1711614382]
+
+[node name="Level1Button" type="Button" parent="CanvasLayer/LevelSelection/Level1Button" unique_id=1693050487 groups=["green_hover", "level_button"]]
+offset_left = 464.0
+offset_top = 308.0
+offset_right = 606.0
+offset_bottom = 369.0
+scale = Vector2(1.5999902, 1)
+theme_type_variation = &"FlatButton"
+flat = true
+metadata/level = 1
+
+[node name="Level1Label" type="Label" parent="CanvasLayer/LevelSelection/Level1Button" unique_id=2112655474]
+offset_top = 300.0
+offset_right = 1152.0
+offset_bottom = 376.0
+text = "Level 1"
+label_settings = SubResource("LabelSettings_70i5f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level2Button" type="Node2D" parent="CanvasLayer/LevelSelection" unique_id=642146828]
+position = Vector2(0, 62)
+
+[node name="Level2Button" type="Button" parent="CanvasLayer/LevelSelection/Level2Button" unique_id=1070960365 groups=["green_hover", "level_button"]]
+offset_left = 464.0
+offset_top = 308.0
+offset_right = 606.0
+offset_bottom = 369.0
+scale = Vector2(1.5999902, 1)
+theme_type_variation = &"FlatButton"
+flat = true
+metadata/level = 2
+
+[node name="Level2Label" type="Label" parent="CanvasLayer/LevelSelection/Level2Button" unique_id=957670117]
+offset_top = 300.0
+offset_right = 1152.0
+offset_bottom = 376.0
+text = "Level 2"
+label_settings = SubResource("LabelSettings_mj5lg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level3Button" type="Node2D" parent="CanvasLayer/LevelSelection" unique_id=850483288]
+position = Vector2(0, 124)
+
+[node name="Level3Button" type="Button" parent="CanvasLayer/LevelSelection/Level3Button" unique_id=1675391508 groups=["green_hover", "level_button"]]
+offset_left = 464.0
+offset_top = 308.0
+offset_right = 606.0
+offset_bottom = 368.0
+scale = Vector2(1.5999902, 1)
+theme_type_variation = &"FlatButton"
+flat = true
+metadata/level = 3
+
+[node name="Level3Label" type="Label" parent="CanvasLayer/LevelSelection/Level3Button" unique_id=1751572853]
+offset_top = 300.0
+offset_right = 1152.0
+offset_bottom = 376.0
+text = "Level 3"
+label_settings = SubResource("LabelSettings_ufwb2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level4Button" type="Node2D" parent="CanvasLayer/LevelSelection" unique_id=357264184]
+position = Vector2(0, 186)
+
+[node name="Level4Button" type="Button" parent="CanvasLayer/LevelSelection/Level4Button" unique_id=170741720 groups=["green_hover", "level_button"]]
+offset_left = 464.0
+offset_top = 308.0
+offset_right = 606.0
+offset_bottom = 366.0
+scale = Vector2(1.5999902, 1)
+theme_type_variation = &"FlatButton"
+flat = true
+metadata/level = 4
+
+[node name="Level4Label" type="Label" parent="CanvasLayer/LevelSelection/Level4Button" unique_id=361419190]
+offset_top = 300.0
+offset_right = 1152.0
+offset_bottom = 376.0
+text = "Level 4"
+label_settings = SubResource("LabelSettings_6cdou")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level5Button" type="Node2D" parent="CanvasLayer/LevelSelection" unique_id=1215985559]
+position = Vector2(0, 248)
+
+[node name="Level5Button" type="Button" parent="CanvasLayer/LevelSelection/Level5Button" unique_id=393439444 groups=["green_hover", "level_button"]]
+offset_left = 464.0
+offset_top = 308.0
+offset_right = 606.0
+offset_bottom = 370.0
+scale = Vector2(1.5999902, 1)
+theme_type_variation = &"FlatButton"
+flat = true
+metadata/level = 5
+
+[node name="Level5Label" type="Label" parent="CanvasLayer/LevelSelection/Level5Button" unique_id=1131692044]
+offset_top = 300.0
+offset_right = 1152.0
+offset_bottom = 376.0
+text = "Level 5"
+label_settings = SubResource("LabelSettings_i42df")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Node2D" parent="CanvasLayer/LevelSelection" unique_id=1627350930]
+position = Vector2(0, 310)
+
+[node name="BackLvlButton" type="Button" parent="CanvasLayer/LevelSelection/BackButton" unique_id=1502988390 groups=["red_hover"]]
+offset_left = 464.0
+offset_top = 308.0
+offset_right = 606.0
+offset_bottom = 370.0
+scale = Vector2(1.5999902, 1)
+theme_type_variation = &"FlatButton"
+flat = true
+
+[node name="BackLabel" type="Label" parent="CanvasLayer/LevelSelection/BackButton" unique_id=1698637229]
+offset_top = 300.0
+offset_right = 1152.0
+offset_bottom = 376.0
+text = "Back"
+label_settings = SubResource("LabelSettings_7jp70")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TitleText" type="Node2D" parent="CanvasLayer" unique_id=2075919729]
+
+[node name="DontLabel" type="Label" parent="CanvasLayer/TitleText" unique_id=1278547784 groups=["title_labels"]]
+unique_name_in_owner = true
+offset_left = 159.0
+offset_top = 85.0
+offset_right = 367.0
+offset_bottom = 178.00017
+text = "Don't"
+label_settings = SubResource("LabelSettings_vjb58")
+
+[node name="TrustLabel" type="Label" parent="CanvasLayer/TitleText" unique_id=1342927148 groups=["title_labels"]]
+unique_name_in_owner = true
+offset_left = 383.0
+offset_top = 85.0
+offset_right = 606.0
+offset_bottom = 274.0
+text = "Trust
+"
+label_settings = SubResource("LabelSettings_vjb58")
+
+[node name="YourLabel" type="Label" parent="CanvasLayer/TitleText" unique_id=338203098 groups=["title_labels"]]
+unique_name_in_owner = true
+offset_left = 621.0
+offset_top = 85.0
+offset_right = 844.0
+offset_bottom = 274.0
+text = "Your
+"
+label_settings = SubResource("LabelSettings_vjb58")
+
+[node name="EyesLabel" type="Label" parent="CanvasLayer/TitleText" unique_id=229632852 groups=["title_labels"]]
+unique_name_in_owner = true
+offset_left = 811.0
+offset_top = 85.0
+offset_right = 1034.0
+offset_bottom = 274.0
+text = "Eyes"
+label_settings = SubResource("LabelSettings_vjb58")
+
+[node name="MenuPositions" type="Node2D" parent="CanvasLayer" unique_id=1660855651]
+
+[node name="FinalWorldPos" type="Node2D" parent="CanvasLayer/MenuPositions" unique_id=176801705]
+unique_name_in_owner = true
+position = Vector2(-323, 42)
+
+[node name="StartingWorldPos" type="Node2D" parent="CanvasLayer/MenuPositions" unique_id=1041114244]
+unique_name_in_owner = true
+position = Vector2(-1381, 42)
+
+[node name="StartingMenuPos" type="Node2D" parent="CanvasLayer/MenuPositions" unique_id=1575607817]
+unique_name_in_owner = true
+
+[node name="FinalMenuPos" type="Node2D" parent="CanvasLayer/MenuPositions" unique_id=626069360]
+unique_name_in_owner = true
+position = Vector2(748, 0)
+
+[node name="FinalLevelPos" type="Node2D" parent="CanvasLayer/MenuPositions" unique_id=980405458]
+unique_name_in_owner = true
+position = Vector2(0, -70)
+
+[node name="StartingLevelPos" type="Node2D" parent="CanvasLayer/MenuPositions" unique_id=1632882559]
+unique_name_in_owner = true
+position = Vector2(-1053, -70)
+
+[node name="AllRightWorldPos" type="Node2D" parent="CanvasLayer/MenuPositions" unique_id=1759213820]
+unique_name_in_owner = true
+position = Vector2(748, 42)
+
+[node name="AudioControl" type="Node2D" parent="CanvasLayer" unique_id=932045824]
+
+[node name="MuteMusicButton" type="Node2D" parent="CanvasLayer/AudioControl" unique_id=1491211647]
+
+[node name="MuteMusicButton" type="Button" parent="CanvasLayer/AudioControl/MuteMusicButton" unique_id=288438566]
+offset_left = 986.0
+offset_top = 10.0
+offset_right = 1133.0
+offset_bottom = 54.0
+theme_type_variation = &"FlatButton"
+flat = true
+
+[node name="MuteMusicLabel" type="Label" parent="CanvasLayer/AudioControl/MuteMusicButton" unique_id=417863640]
+unique_name_in_owner = true
+offset_left = 483.0
+offset_top = -8.0
+offset_right = 1635.0
+offset_bottom = 68.0
+text = "music"
+label_settings = SubResource("LabelSettings_mxgkd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MuteSFXButton" type="Node2D" parent="CanvasLayer/AudioControl" unique_id=1848164898]
+position = Vector2(-158, 0)
+
+[node name="MuteSFXButton" type="Button" parent="CanvasLayer/AudioControl/MuteSFXButton" unique_id=38116121]
+offset_left = 1012.0
+offset_top = 10.0
+offset_right = 1107.0
+offset_bottom = 54.0
+theme_type_variation = &"FlatButton"
+flat = true
+
+[node name="MuteSFXLabel" type="Label" parent="CanvasLayer/AudioControl/MuteSFXButton" unique_id=1555535952]
+unique_name_in_owner = true
+offset_left = 483.0
+offset_top = -8.0
+offset_right = 1635.0
+offset_bottom = 68.0
+text = "sfx"
+label_settings = SubResource("LabelSettings_g6gyw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuLoop" type="AudioStreamPlayer" parent="." unique_id=1785521178]
+unique_name_in_owner = true
+stream = ExtResource("1_yqeox")
+volume_db = 1.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[connection signal="pressed" from="CanvasLayer/MenuButtons/PlayButton/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuButtons/ExitButton/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/WorldSelection/Back/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/LevelSelection/BackButton/BackLvlButton" to="." method="_on_back_lvl_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/AudioControl/MuteMusicButton/MuteMusicButton" to="." method="_on_mute_music_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/AudioControl/MuteSFXButton/MuteSFXButton" to="." method="_on_mute_sfx_button_pressed"]

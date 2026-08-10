@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ck5of5ya0gy4d"]
+
+[node name="LevelLayout" type="Node2D" unique_id=518455203]
+
+[node name="FixedStructures" type="Node2D" parent="." unique_id=929427508]
+
+[node name="Bounds" type="Node2D" parent="FixedStructures" unique_id=625820601]
+
+[node name="Floor" type="Node2D" parent="FixedStructures" unique_id=864424864]
+
+[node name="Ceiling" type="Node2D" parent="FixedStructures" unique_id=582308159]
+
+[node name="Traps" type="Node2D" parent="." unique_id=1140492186]
+
+[node name="Fixed" type="Node2D" parent="Traps" unique_id=1880756572]
+
+[node name="Spikes" type="Node2D" parent="Traps/Fixed" unique_id=1947631559]
+
+[node name="Moving" type="Node2D" parent="Traps" unique_id=1503474765]
+
+[node name="Triggers" type="Node2D" parent="Traps/Moving" unique_id=1646020920]
+
+[node name="Floor" type="Node2D" parent="Traps/Moving" unique_id=327025964]
+
+[node name="Sounds" type="Node2D" parent="." unique_id=223845913]

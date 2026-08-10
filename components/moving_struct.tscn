@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c75irml1j82kx"]
+
+[ext_resource type="Script" uid="uid://b3urxsfilnjta" path="res://scripts/moving_struct.gd" id="1_a36ls"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vj48"]
+size = Vector2(40, 40)
+
+[node name="MovingStruct" type="StaticBody2D" unique_id=345035053 node_paths=PackedStringArray("color_rect")]
+script = ExtResource("1_a36ls")
+travel = null
+await_time = null
+color_rect = NodePath("ColorRect")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1118253545]
+shape = SubResource("RectangleShape2D_8vj48")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=916886349]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0

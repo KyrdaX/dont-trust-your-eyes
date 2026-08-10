@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://bbedohtk71sbo"]
+
+[ext_resource type="Script" uid="uid://covd7l75deid2" path="res://scripts/teleport_area.gd" id="1_8fpd7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_remmg"]
+size = Vector2(1306, 20)
+
+[sub_resource type="Resource" id="Resource_sjkdy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hltu4"]
+size = Vector2(20, 793)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3lbft"]
+size = Vector2(20, 816)
+
+[node name="WorldTwoLevelFive" type="Node2D" unique_id=983182080]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1806050543]
+z_index = -3
+offset_left = -34.0
+offset_top = -22.000002
+offset_right = 6.0
+offset_bottom = 17.999998
+scale = Vector2(30.902098, 17.24818)
+color = Color(0.23137255, 0.41960785, 0.7372549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelLayout" type="Node2D" parent="." unique_id=518455203]
+
+[node name="FixedStructures" type="Node2D" parent="LevelLayout" unique_id=929427508]
+
+[node name="Bounds" type="Node2D" parent="LevelLayout/FixedStructures" unique_id=625820601]
+
+[node name="Area2D" type="Area2D" parent="LevelLayout/FixedStructures/Bounds" unique_id=1990674904 node_paths=PackedStringArray("reference_object") groups=["teleport"]]
+script = ExtResource("1_8fpd7")
+reference_object = NodePath("TPPoint")
+metadata/axis = "vertical"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/FixedStructures/Bounds/Area2D" unique_id=1413382782]
+position = Vector2(582, 715)
+shape = SubResource("RectangleShape2D_remmg")
+metadata/TPPosition = SubResource("Resource_sjkdy")
+
+[node name="TPPoint" type="Node2D" parent="LevelLayout/FixedStructures/Bounds/Area2D" unique_id=1151735336]
+position = Vector2(135, -47)
+
+[node name="Area2D2" type="Area2D" parent="LevelLayout/FixedStructures/Bounds" unique_id=2066811839 node_paths=PackedStringArray("reference_object") groups=["teleport"]]
+script = ExtResource("1_8fpd7")
+reference_object = NodePath("TPPoint")
+metadata/axis = "horizontal"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/FixedStructures/Bounds/Area2D2" unique_id=1250961064]
+position = Vector2(-46, 314.5)
+shape = SubResource("RectangleShape2D_hltu4")
+
+[node name="TPPoint" type="Node2D" parent="LevelLayout/FixedStructures/Bounds/Area2D2" unique_id=1611634794]
+position = Vector2(1176, 355)
+
+[node name="Area2D3" type="Area2D" parent="LevelLayout/FixedStructures/Bounds" unique_id=1324157065 node_paths=PackedStringArray("reference_object") groups=["teleport"]]
+script = ExtResource("1_8fpd7")
+reference_object = NodePath("TPPoint")
+metadata/axis = "horizontal"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelLayout/FixedStructures/Bounds/Area2D3" unique_id=331466177]
+position = Vector2(1216, 282)
+shape = SubResource("RectangleShape2D_3lbft")
+
+[node name="TPPoint" type="Node2D" parent="LevelLayout/FixedStructures/Bounds/Area2D3" unique_id=1427951843]
+position = Vector2(-14, 286)
+
+[node name="Floor" type="Node2D" parent="LevelLayout/FixedStructures" unique_id=864424864]
+
+[node name="Ceiling" type="Node2D" parent="LevelLayout/FixedStructures" unique_id=582308159]
+
+[node name="Traps" type="Node2D" parent="LevelLayout" unique_id=1140492186]
+
+[node name="Fixed" type="Node2D" parent="LevelLayout/Traps" unique_id=1880756572]
+
+[node name="Spikes" type="Node2D" parent="LevelLayout/Traps/Fixed" unique_id=1947631559]
+
+[node name="Moving" type="Node2D" parent="LevelLayout/Traps" unique_id=1503474765]
+
+[node name="Triggers" type="Node2D" parent="LevelLayout/Traps/Moving" unique_id=1646020920]
+
+[node name="Floor" type="Node2D" parent="LevelLayout/Traps/Moving" unique_id=327025964]
+
+[node name="Sounds" type="Node2D" parent="LevelLayout" unique_id=223845913]

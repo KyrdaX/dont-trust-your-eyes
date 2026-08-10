@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dffsy1wloavay"
-path="res://.godot/imported/player_idling.png-2556c43506e1ce4c0a937c3a64cb3100.ctex"
+path="res://.godot/imported/player_idling.png-c41f49639886114594c0605b68eefea8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player_idling.png"
-dest_files=["res://.godot/imported/player_idling.png-2556c43506e1ce4c0a937c3a64cb3100.ctex"]
+source_file="res://assets/Player/player_idling.png"
+dest_files=["res://.godot/imported/player_idling.png-c41f49639886114594c0605b68eefea8.ctex"]
 
 [params]
 

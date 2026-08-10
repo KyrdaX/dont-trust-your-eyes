@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vapcb00x18vi"
-path="res://.godot/imported/player_walking.png-f2b5e40d70178db731e52e207f904ba0.ctex"
+uid="uid://dn6kje1ma8qf7"
+path="res://.godot/imported/goal_disappearing.png-3b79f36e1810b05ac75f68f227d44d20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player_walking.png"
-dest_files=["res://.godot/imported/player_walking.png-f2b5e40d70178db731e52e207f904ba0.ctex"]
+source_file="res://assets/Goals/goal_disappearing.png"
+dest_files=["res://.godot/imported/goal_disappearing.png-3b79f36e1810b05ac75f68f227d44d20.ctex"]
 
 [params]
 
