@@ -110,7 +110,7 @@ func _win(area: Area2D):
 	queue_free()
 
 func _teleport(area: Area2D):
-	if !area.has_meta("axis"): return
+	if not area.has_meta("axis"): return
 	var tp_axis = area.get_meta("axis")
 	
 	if tp_axis == "horizontal":

@@ -7,8 +7,6 @@ size = Vector2(40, 40)
 
 [node name="MovingStruct" type="StaticBody2D" unique_id=345035053 node_paths=PackedStringArray("color_rect")]
 script = ExtResource("1_a36ls")
-travel = null
-await_time = null
 color_rect = NodePath("ColorRect")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1118253545]
@@ -19,3 +17,24 @@ offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
+
+[node name="AnchorPoints" type="Node2D" parent="." unique_id=1272608541]
+
+[node name="TopAnchor" type="Node2D" parent="AnchorPoints" unique_id=1797091733]
+unique_name_in_owner = true
+position = Vector2(0, -20)
+
+[node name="LeftAnchor" type="Node2D" parent="AnchorPoints" unique_id=1831877449]
+unique_name_in_owner = true
+position = Vector2(-20, 0)
+rotation = -1.5707964
+
+[node name="RightAnchor" type="Node2D" parent="AnchorPoints" unique_id=268279347]
+unique_name_in_owner = true
+position = Vector2(20, 0)
+rotation = 1.5707964
+
+[node name="BottomAnchor" type="Node2D" parent="AnchorPoints" unique_id=1967024346]
+unique_name_in_owner = true
+position = Vector2(0, 20)
+rotation = 3.1415927

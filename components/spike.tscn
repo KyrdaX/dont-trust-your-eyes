@@ -11,28 +11,46 @@ size = Vector2(4, 10)
 [node name="Spike" type="CharacterBody2D" unique_id=1650476415 node_paths=PackedStringArray("spikes")]
 scale = Vector2(1.7199992, 1.7199992)
 script = ExtResource("1_ivkfj")
-spikes = [NodePath("World1"), NodePath("World2"), NodePath("World3")]
+spikes = [NodePath("AnchorPoint/World1"), NodePath("AnchorPoint/World2"), NodePath("AnchorPoint/World3")]
 
-[node name="World1" type="Sprite2D" parent="." unique_id=96449136]
+[node name="AnchorPoint" type="Node2D" parent="." unique_id=1269132983]
+unique_name_in_owner = true
+position = Vector2(0, 20.154)
+
+[node name="World1" type="Sprite2D" parent="AnchorPoint" unique_id=96449136]
 texture_filter = 1
-scale = Vector2(2.520001, 2.520001)
+position = Vector2(0, -20.154001)
+scale = Vector2(2.5200012, 2.5200012)
 texture = ExtResource("1_rlul2")
 
-[node name="World2" type="Sprite2D" parent="." unique_id=1861419851]
+[node name="World2" type="Sprite2D" parent="AnchorPoint" unique_id=1861419851]
 visible = false
 texture_filter = 1
-scale = Vector2(2.5200012, 2.5200012)
+position = Vector2(0, -20.154001)
+scale = Vector2(2.5200016, 2.5200016)
 texture = ExtResource("3_8ax5c")
 
-[node name="World3" type="Sprite2D" parent="." unique_id=1920693988]
+[node name="World3" type="Sprite2D" parent="AnchorPoint" unique_id=1920693988]
 visible = false
 texture_filter = 1
-scale = Vector2(2.5200012, 2.5200012)
+position = Vector2(0, -20.154001)
+scale = Vector2(2.5200016, 2.5200016)
 texture = ExtResource("4_4cfnx")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=233952924 groups=["hazard"]]
+[node name="Area2D" type="Area2D" parent="AnchorPoint" unique_id=233952924 groups=["hazard"]]
+position = Vector2(0, -20.154001)
+scale = Vector2(1.0000001, 1.0000001)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=551275864]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnchorPoint/Area2D" unique_id=551275864]
 position = Vector2(0, 15.000002)
 scale = Vector2(2.5348847, 1.0000001)
 shape = SubResource("RectangleShape2D_ivkfj")
+
+[node name="RightAnchor" type="Node2D" parent="AnchorPoint" unique_id=1447796266]
+unique_name_in_owner = true
+position = Vector2(7.558143, -0.9679451)
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="LeftAnchor" type="Node2D" parent="AnchorPoint" unique_id=69504430]
+unique_name_in_owner = true
+position = Vector2(-7.558145, -0.9679445)

@@ -9,13 +9,21 @@ size = Vector2(955, 172)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8uka1"]
 size = Vector2(476, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yuygs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_axahv"]
+size = Vector2(30, 186)
+
 [node name="ComponentsTest" type="Node2D" unique_id=1363492093]
 
-[node name="MovingStruct" parent="." unique_id=345035053 node_paths=PackedStringArray("trigger") instance=ExtResource("1_iyj4x")]
+[node name="MovingStruct" parent="." unique_id=345035053 instance=ExtResource("1_iyj4x")]
 position = Vector2(717, 230)
-trigger = NodePath("../Area2D")
-travel = 0.0
-await_time = 0.0
+scale = Vector2(5.2490187, 3.4488535)
+travel = 1.0
+await_time = 0.5
+returns = true
+spikes = true
+direction = 1
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2080989409]
 
@@ -31,3 +39,24 @@ position = Vector2(152, 41)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=965780292]
 position = Vector2(239, 353)
 shape = SubResource("RectangleShape2D_8uka1")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=537039281]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1926548948]
+position = Vector2(445, 285)
+scale = Vector2(2.9499762, 6.176432)
+shape = SubResource("RectangleShape2D_yuygs")
+
+[node name="MovingStruct2" parent="." unique_id=1719073646 node_paths=PackedStringArray("triggers") instance=ExtResource("1_iyj4x")]
+position = Vector2(611, 83)
+triggers = [NodePath("../Area2D3")]
+struct_color = Color(1, 0, 0, 1)
+end_pos = Vector2(200, 83)
+travel = 1.0
+await_time = 0.5
+
+[node name="Area2D3" type="Area2D" parent="." unique_id=726382162]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=1355437386]
+position = Vector2(367, 264)
+shape = SubResource("RectangleShape2D_axahv")
